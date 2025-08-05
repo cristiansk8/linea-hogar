@@ -1,3 +1,4 @@
+import QuienesSomosSection from "@/components/about";
 import ScheduleAppointment from "@/components/appointment";
 import FeaturesGrid from "@/components/cards";
 import Footer from "@/components/footer";
@@ -12,6 +13,7 @@ export default function Home() {
       {/* Incluye el componente Header */}
       <Header />
       <WorkWithUs/>
+      <QuienesSomosSection/>
       <FeaturesGrid/>
       <ProjectCards />
       <ScheduleAppointment/>

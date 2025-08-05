@@ -50,7 +50,7 @@ export default function Header() {
               <div className="p-2 rounded-lg">
                 <div className="relative h-18 w-18">
                   <Image
-                    src="/logo-linea-hogar.jpg"
+                    src="/linea-hogar.png"
                     alt="Company Logo"
                     fill
                     className="object-contain"
@@ -117,7 +117,7 @@ export default function Header() {
             Portafolio
           </Link>
           <Link href="#" className="text-sm font-semibold leading-6 text-white">
-            Blog
+            Nosotros
           </Link>
           <Link href="#" className="text-sm font-semibold leading-6 text-white">
             Nuestro equipo
@@ -126,9 +126,9 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
             href="https://www.facebook.com/decoradising"
-            className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="rounded-md bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
           >
-            Facebook
+            Cotiza vía WhatsApp
           </Link>
         </div>
       </nav>
@@ -142,7 +142,7 @@ export default function Header() {
                 <div className="p-2 rounded-lg">
                   <div className="relative h-18 w-18">
                     <Image
-                      src="/logo-linea-hogar.jpg"
+                      src="/linea-hogar.png"
                       alt="Company Logo"
                       fill
                       className="object-contain"
@@ -198,7 +198,7 @@ export default function Header() {
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Blog
+                  Nosotros
                 </Link>
                 <Link
                   href="#"
@@ -210,9 +210,9 @@ export default function Header() {
               <div className="py-6">
                 <Link
                   href="https://www.facebook.com/decoradising"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="rounded-md bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
                 >
-                  Facebook
+                  Cotiza vía WhatsApp
                 </Link>
               </div>
             </div>

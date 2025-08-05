@@ -4,16 +4,16 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const links = [
-    { name: 'Open roles', href: '#' },
-    { name: 'Internship program', href: '#' },
-    { name: 'Our values', href: '#' },
-    { name: 'Meet our leadership', href: '#' },
+  { name: 'Open roles', href: '#' },
+  { name: 'Internship program', href: '#' },
+  { name: 'Our values', href: '#' },
+  { name: 'Meet our leadership', href: '#' },
 ];
 const stats = [
-    { name: 'Offices worldwide', value: '12' },
-    { name: 'Full-time colleagues', value: '300+' },
-    { name: 'Hours per week', value: '40' },
-    { name: 'Paid time off', value: 'Unlimited' },
+  { name: 'Offices worldwide', value: '12' },
+  { name: 'Full-time colleagues', value: '300+' },
+  { name: 'Hours per week', value: '40' },
+  { name: 'Paid time off', value: 'Unlimited' },
 ];
 
 const images = [
@@ -40,9 +40,8 @@ export default function WorkWithUs() {
         {images.map((src, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === currentIndex ? 'opacity-100' : 'opacity-0'
-            }`}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentIndex ? 'opacity-100' : 'opacity-0'
+              }`}
           >
             <Image
               src={src}
@@ -61,14 +60,16 @@ export default function WorkWithUs() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl drop-shadow-lg">
-            Nuestros Mejores Proyectos
+            Diseñamos tu hogar a la medida
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-300 drop-shadow">
-        Diseño y Fabricación de Mobiliario Arquitectónico a Medida Espacios con Identidad.
+            Especialistas en cocinas integrales, closets y muebles personalizados.
+            🚛 Instalación en Bogotá y alrededores | 🛠️ Garantía incluida
           </p>
           <div className="mt-10">
-            <button className="rounded-md bg-white px-6 py-3 text-gray-900 font-semibold shadow-md hover:bg-gray-100 transition">
-              Ver portaafolio
+            <button className="rounded-md bg-white px-6 py-3 text-gray-900 font-semibold shadow-md hover:bg-[#f0b100] hover:text-white transition">
+              Solicita tu cotización gratuita
+
             </button>
           </div>
         </div>
