@@ -125,7 +125,7 @@ export default function Header() {
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
-            href="https://www.facebook.com/decoradising"
+            href="https://wa.link/21h4sx"
             className="rounded-md bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
           >
             Cotiza vía WhatsApp
@@ -209,7 +209,7 @@ export default function Header() {
               </div>
               <div className="py-6">
                 <Link
-                  href="https://www.facebook.com/decoradising"
+                  href="https://wa.link/21h4sx"
                   className="rounded-md bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
                 >
                   Cotiza vía WhatsApp

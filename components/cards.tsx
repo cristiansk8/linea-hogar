@@ -1,84 +1,201 @@
 'use client'
 
-import {
-  HomeModernIcon,     // Cocinas integrales
-  RectangleStackIcon, // Closets y vestidores (estanterías apiladas)
-  TvIcon,             // Centros de entretenimiento
-  SparklesIcon,       // Muebles para baños (limpieza/brillo)
-} from '@heroicons/react/24/outline'
-import {
-  Cog6ToothIcon, // CogIcon,
-  LightBulbIcon, // LightBulbIcon,
-} from '@heroicons/react/24/solid'
-import { PaintBrushIcon } from '@heroicons/react/24/outline'
+import { useState, useEffect } from 'react'
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 
-
-const features = [
+const projects = [
   {
-    title: 'Cocinas integrales personalizadas',
-    description: 'Diseñamos cocinas funcionales, modernas y adaptadas a tu espacio. Elige los colores, materiales y distribución ideal para ti.',
-    highlights: ['Acabados premium', 'Optimización del espacio', 'Entrega puntual'],
-    icon: HomeModernIcon,
+    id: 1,
+    title: 'Cocina Moderna Minimalista',
+    category: 'Cocinas',
+    image: '/cocina.jpeg',
+    description: 'Diseño contemporáneo con acabados en blanco y madera natural'
   },
   {
-    title: 'Closets y vestieres a medida',
-    description: 'Soluciones inteligentes para organizar tu ropa y accesorios con estilo. Aprovechamos cada rincón, sin perder elegancia ni comodidad.',
-    highlights: ['Módulos personalizables', 'Acabados modernos o clásicos ', 'Puertas abatibles o corredizas'],
-    icon: RectangleStackIcon,
+    id: 2,
+    title: 'Closet Walk-in Luxury',
+    category: 'Closets',
+    image: '/closet.jpg',
+    description: 'Vestidor amplio con iluminación LED y acabados premium'
   },
   {
-    title: 'Centros de entretenimiento',
-    description: 'Diseños pensados para que tu sala se vea increíble y todo esté en su lugar.Espacios para TV, consolas, decoración y almacenamiento.',
-    highlights: [' Fabricación sobre plano', 'Tonos tipo madera ', 'Ajuste perfecto al área disponible'],
-    icon: TvIcon,
+    id: 3,
+    title: 'Centro de Entretenimiento',
+    category: 'Entretenimiento',
+    image: '/tv.jpg',
+    description: 'Mueble TV con almacenamiento integrado y cable management'
   },
   {
-    title: 'Muebles para baños y lavaderos',
-    description: 'Muebles resistentes a la humedad, prácticos y con excelente estética. Perfectos para mantener el orden en espacios pequeños.',
-    highlights: [' Materiales resistentes', 'Diseño limpio y funcional ', 'Fácil mantenimiento'],
-    icon: SparklesIcon,
+    id: 4,
+    title: 'Baño Contemporáneo',
+    category: 'Baños',
+    image: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    description: 'Vanity flotante con espejo retroiluminado'
   },
+  {
+    id: 5,
+    title: 'Cocina Industrial Chic',
+    category: 'Cocinas',
+    image: '/cocina-2.jpg',
+    description: 'Estilo industrial con isla central y acabados metálicos'
+  },
+  {
+    id: 6,
+    title: 'Closet Compacto',
+    category: 'Closets',
+    image: '/closet-2.jpg',
+    description: 'Solución inteligente para espacios reducidos'
+  }
 ]
 
-export default function FeaturesGrid() {
+export default function ProjectGallerySlider() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [slidesToShow, setSlidesToShow] = useState(3)
+
+  // Responsive slides calculation
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setSlidesToShow(1)
+      } else if (window.innerWidth < 1024) {
+        setSlidesToShow(2)
+      } else {
+        setSlidesToShow(3)
+      }
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => 
+      prev >= projects.length - slidesToShow ? 0 : prev + 1
+    )
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => 
+      prev <= 0 ? projects.length - slidesToShow : prev - 1
+    )
+  }
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index)
+  }
+
+  // Auto-play functionality
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 5000)
+    return () => clearInterval(timer)
+  }, [currentSlide, slidesToShow])
+
   return (
-    <section className="bg-gray-50 py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-        <h2 className="text-base font-semibold text-yellow-500">Linea Hogar</h2>
-        <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-          Nuestros frentes de trabajo
-        </p>
+    <section className="bg-white py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-base font-semibold text-yellow-500">Nuestros Proyectos</h2>
+          <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            Galería de Realizaciones
+          </p>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Nuestros proyectos hablan por nosotros
+          </p>
+        </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group rounded-xl bg-white p-6 shadow-sm transition hover:shadow-lg hover:ring-1 hover:ring-yellow-700 h-full flex flex-col"
+        {/* Slider Container */}
+        <div className="relative">
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-200 hover:scale-110"
+            aria-label="Proyecto anterior"
+          >
+            <ChevronLeftIcon className="h-6 w-6 text-gray-700" />
+          </button>
+          
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-200 hover:scale-110"
+            aria-label="Siguiente proyecto"
+          >
+            <ChevronRightIcon className="h-6 w-6 text-gray-700" />
+          </button>
+
+          {/* Slides */}
+          <div className="overflow-hidden rounded-2xl">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{
+                transform: `translateX(-${currentSlide * (100 / slidesToShow)}%)`
+              }}
             >
-              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-yellow-50 text-yellow-600 group-hover:bg-yellow-100 transition-colors">
-                <feature.icon className="h-8 w-8" />
-              </div>
-
-              <div className="flex-1 flex flex-col text-center">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4 leading-tight">{feature.title}</h3>
-                <p className="text-sm text-gray-600 mb-4 flex-1">{feature.description}</p>
-
-                {/* Highlights especiales para el primer item */}
-                {feature.highlights && (
-                  <div className="mt-auto pt-4 border-t border-gray-100">
-                    <div className="space-y-2">
-                      {feature.highlights.map((highlight, highlightIndex) => (
-                        <div key={highlightIndex} className="flex items-center justify-center text-xs text-gray-600">
-                          <span className="text-yellow-500 mr-2 font-semibold">✓</span>
-                          <span className="font-medium">{highlight}</span>
+              {projects.map((project) => (
+                <div
+                  key={project.id}
+                  className={`flex-shrink-0 px-3 ${
+                    slidesToShow === 1 ? 'w-full' : 
+                    slidesToShow === 2 ? 'w-1/2' : 'w-1/3'
+                  }`}
+                >
+                  <div className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                          <span className="inline-block px-3 py-1 bg-yellow-500 text-black text-xs font-semibold rounded-full mb-2">
+                            {project.category}
+                          </span>
+                          <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                          <p className="text-sm text-gray-200">{project.description}</p>
                         </div>
-                      ))}
+                      </div>
+                    </div>
+                    
+                    {/* Card Content */}
+                    <div className="p-6">
+                      <span className="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-semibold rounded-full mb-3">
+                        {project.category}
+                      </span>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">{project.title}</h3>
+                      <p className="text-sm text-gray-600">{project.description}</p>
                     </div>
                   </div>
-                )}
-              </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Dots Navigation */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {Array.from({ length: Math.ceil(projects.length / slidesToShow) }).map((_, index: number) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                  currentSlide === index
+                    ? 'bg-yellow-500 scale-125'
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Ir al slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* CTA Button */}
+        <div className="text-center mt-12">
+          <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            Ver Todos los Proyectos
+          </button>
         </div>
       </div>
     </section>
