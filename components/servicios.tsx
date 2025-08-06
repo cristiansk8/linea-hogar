@@ -1,8 +1,3 @@
-
-
-
-
-
 'use client'
 
 import {
@@ -11,11 +6,6 @@ import {
   TvIcon,             // Centros de entretenimiento
   SparklesIcon,       // Muebles para baños (limpieza/brillo)
 } from '@heroicons/react/24/outline'
-import {
-  Cog6ToothIcon, // CogIcon,
-  LightBulbIcon, // LightBulbIcon,
-} from '@heroicons/react/24/solid'
-import { PaintBrushIcon } from '@heroicons/react/24/outline'
 
 const features = [
   {

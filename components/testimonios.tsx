@@ -185,7 +185,7 @@ export default function TestimonialsSection() {
 
                     {/* Testimonial Text */}
                     <blockquote className="text-gray-700 text-center italic text-lg leading-relaxed mb-8 flex-1">
-                      "{testimonial.text}"
+                      &ldquo;{testimonial.text}&ldquo;
                     </blockquote>
 
                     {/* Project Type */}
@@ -226,7 +226,6 @@ export default function TestimonialsSection() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   )
