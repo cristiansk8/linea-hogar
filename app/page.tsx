@@ -7,21 +7,24 @@ import WorkWithUs from "@/components/hero-banner"; // Importa el componente Head
 import ProjectGallerySlider from "@/components/cards";
 import ProjectCards from "@/components/projectCards";
 import TestimonialsSection from "@/components/testimonios";
+import SocialMedia from "@/components/redes";
 
 
 export default function Home() {
   return (
     <>
       {/* Incluye el componente Header */}
-      <Header /> 
-      <WorkWithUs/>
-      <QuienesSomosSection/>
-      <FeaturesGrid/>
+      <Header />
+      <WorkWithUs />
+      <QuienesSomosSection />
+      <FeaturesGrid />
       <ProjectGallerySlider />
       <TestimonialsSection />
       <ProjectCards />
-      <ScheduleAppointment/>
+      <ScheduleAppointment />
       <Footer />
+      <SocialMedia /> {/* Agregar esta línea */}
+
 
     </>
   );

@@ -29,6 +29,7 @@ export default function Footer() {
                     <ul className="space-y-1 text-sm">
                         <li>Email: contacto@lineahogar.com</li>
                         <li>Tel: +57 301 947 2628</li>
+                        <li>Calle 106b #70 38</li>
                         <li>Bogotá, Colombia</li>
                     </ul>
                 </div>
