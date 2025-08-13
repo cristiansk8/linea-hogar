@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
@@ -66,10 +67,14 @@ export default function WorkWithUs() {
             🚛 Instalación en Bogotá y alrededores | 🛠️ Garantía incluida
           </p>
           <div className="mt-10">
-            <button className="rounded-md bg-white px-6 py-3 text-gray-900 font-semibold shadow-md hover:bg-[#f0b100] hover:text-white transition">
+            <Link
+              href="https://wa.link/21h4sx"
+              className="inline-block rounded-md bg-white px-6 py-3 text-gray-900 font-semibold shadow-md hover:bg-[#f0b100] hover:text-white transition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Solicita tu cotización gratuita
-
-            </button>
+            </Link>
           </div>
         </div>
       </div>

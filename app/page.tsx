@@ -18,9 +18,9 @@ export default function Home() {
       <QuienesSomosSection/>
       <FeaturesGrid/>
       <ProjectGallerySlider />
+      <TestimonialsSection />
       <ProjectCards />
       <ScheduleAppointment/>
-      <TestimonialsSection />
       <Footer />
 
     </>

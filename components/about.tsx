@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
+import Link from 'next/link';
 
 const QuienesSomosSection = () => {
   const servicios = [
@@ -9,7 +10,7 @@ const QuienesSomosSection = () => {
   ];
 
   return (
-    <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="bg-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -26,8 +27,8 @@ const QuienesSomosSection = () => {
                 Más de 20 años transformando hogares con calidad y detalle.
               </p>
               <p>
-                En <span className="font-semibold text-amber-600 italic">Línea Hogar</span> somos 
-                un equipo experto en diseño y fabricación de mobiliario personalizado. Nos enfocamos 
+                En <span className="font-semibold text-amber-600 italic">Línea Hogar</span> somos
+                un equipo experto en diseño y fabricación de mobiliario personalizado. Nos enfocamos
                 en crear espacios funcionales, modernos y adaptados a tu estilo de vida.
               </p>
             </div>
@@ -46,9 +47,12 @@ const QuienesSomosSection = () => {
 
             {/* CTA Button */}
             <div className="pt-6">
-              <button className="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <Link
+                href="#projects"
+                className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              >
                 Conoce nuestros proyectos
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -61,7 +65,7 @@ const QuienesSomosSection = () => {
                   <div className="text-gray-600 font-medium">Años de experiencia</div>
                 </div>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <div className="bg-white rounded-lg p-4 shadow-md text-center">
                   <div className="text-2xl font-bold text-gray-800">500+</div>

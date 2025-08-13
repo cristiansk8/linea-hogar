@@ -17,9 +17,9 @@ export default function Footer() {
                     <h3 className="text-yellow-500 mb-2 text-sm font-semibold uppercase">Navegación</h3>
                     <ul className="space-y-1 text-sm">
                         <li><a href="#" className="hover:text-yellow-500">Inicio</a></li>
-                        <li><a href="#" className="hover:text-yellow-500">Proyectos</a></li>
-                        <li><a href="#" className="hover:text-yellow-500">Servicios</a></li>
-                        <li><a href="#" className="hover:text-yellow-500">Contacto</a></li>
+                        <li><a href="#projects" className="hover:text-yellow-500">Proyectos</a></li>
+                        <li><a href="#servicios" className="hover:text-yellow-500">Servicios</a></li>
+                        <li><a href="#contacto" className="hover:text-yellow-500">Contacto</a></li>
                     </ul>
                 </div>
 
@@ -28,7 +28,7 @@ export default function Footer() {
                     <h3 className="text-yellow-500 mb-2 text-sm font-semibold uppercase">Contáctanos</h3>
                     <ul className="space-y-1 text-sm">
                         <li>Email: contacto@lineahogar.com</li>
-                        <li>Tel: +57 300 123 4567</li>
+                        <li>Tel: +57 301 947 2628</li>
                         <li>Bogotá, Colombia</li>
                     </ul>
                 </div>
