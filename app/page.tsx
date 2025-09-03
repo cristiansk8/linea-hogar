@@ -8,6 +8,7 @@ import ProjectGallerySlider from "@/components/cards";
 import ProjectCards from "@/components/projectCards";
 import TestimonialsSection from "@/components/testimonios";
 import SocialMedia from "@/components/redes";
+import N8nChatWidget from "@/components/N8nChatWidget";
 
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
       <ScheduleAppointment />
       <Footer />
       <SocialMedia /> {/* Agregar esta línea */}
+      <N8nChatWidget />
 
 
     </>
